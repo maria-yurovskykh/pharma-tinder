@@ -1,1 +1,1 @@
-# antonskykh.github.io
+# pharma-game

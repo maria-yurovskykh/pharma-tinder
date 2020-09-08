@@ -1,0 +1,20 @@
+{
+  "name": "pharma-game",
+  "scripts": {
+    "build": "vue-cli-service build",
+    "serve": "vue-cli-service serve"
+  },
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@vue/cli-plugin-babel": "~4.2.0",
+    "@vue/cli-service": "~4.2.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-vue": "^2.0.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
