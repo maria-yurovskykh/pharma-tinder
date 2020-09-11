@@ -1,0 +1,521 @@
+$color-blue: #169ae4;
+$color-green: #2d8550;
+$color-grey: #424242;
+$color-lilac: #5e6ec2;
+$color-lilac-light: #8E9ad5;
+$color-purple: #8049c7;
+$color-white: #fff;
+$color-yellow: #ffd748;
+
+@font-face {
+  font-family: "Avenir Next Cyr";
+  src:
+    url(../public/fonts/avenirnextcyr-thin.woff2) format("woff2"),
+    url(../public/fonts/avenirnextcyr-thin.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next Cyr";
+  src:
+    url(../public/fonts/avenirnextcyr-demi.woff2) format("woff2"),
+    url(../public/fonts/avenirnextcyr-demi.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next Cyr";
+  src:
+    url(../public/fonts/avenirnextcyr-bold.woff2) format("woff2"),
+    url(../public/fonts/avenirnextcyr-bold.woff) format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src:
+    url(../public/fonts/montserrat-bold.woff2) format("woff2"),
+    url(../public/fonts/montserrat-bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+button {
+  font-family: Avenir Next Cyr;
+  border-style: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Base styles */
+body {
+  font-family: Avenir Next Cyr;
+  font-weight: 300;
+}
+
+.pharm-tinder {
+  overflow: hidden;
+  width: 1440px;
+  height: 1024px;
+}
+
+.home {
+  height: 100%;
+  background: linear-gradient(63.53deg, rgba(45, 133, 80, 0.35) 16.62%, rgba(94, 110, 194, 0.35) 83.38%) no-repeat, url(../public/img/cover.png) no-repeat;
+
+  &__circle {
+    display: flex;
+    flex-direction: column;
+    margin: -30px 0 0 110px;
+    border-radius: 50%;
+    width: 860px;
+    height: 860px;
+    background: linear-gradient(63.53deg, #2d8550 16.62%, #5e6ec2 83.38%);
+  }
+
+  &__heading {
+    position: absolute;
+    width: 580px;
+    height: 140px;
+    left: 291px;
+    top: 320px;
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: $color-white;
+
+    .heading__pharmacist {
+      font-size: 70px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+  }
+
+  &__welcome {
+    position: absolute;
+    left: 296px;
+    top: 250px;
+    font-size: 35px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: $color-white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &__start {
+    position: absolute;
+    border-radius: 100px;
+    width: 381px;
+    height: 90px;
+    left: 351px;
+    top: 580px;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 36px;
+    color: $color-lilac-light;
+    background: $color-white;
+    text-align: center;
+  }
+}
+
+.game {
+  position: relative;
+  display: flex;
+
+  &__side-bar {
+    width: 470px;
+    height: 1024px;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(63.53deg, rgba(45, 133, 80, 0.7) 16.62%, rgba(94, 110, 194, 0.7) 83.38%), $color-white;
+    z-index: 1;
+  }
+
+  &__screen {
+    position: relative;
+
+    .screen__card {
+      position: absolute;
+      border-radius: 40px;
+      width: 540px;
+      height: 590px;
+      left: 220px;
+      top: 130px;
+      background: $color-white;
+      box-shadow: 0px 0px 40px rgba(127, 127, 127, 0.4);
+
+      // &:after {
+      //   content: "Препарат 1";
+      //   position: absolute;
+      //   border: 5px solid $color-purple;
+      //   width: 360px;
+      //   height: 120px;
+      //   left: 90px;
+      //   top: 265px;
+      //   font-size: 52px;
+      //   line-height: 110px;
+      //   font-weight: 600;
+      //   text-align: center;
+      //   color: $color-purple;
+      //   transform: rotate(-10deg);
+      // }
+
+      //   &:after {
+      //   content: "Препарат 2";
+      //   position: absolute;
+      //   border: 5px solid $color-blue;
+      //   width: 360px;
+      //   height: 120px;
+      //   left: 90px;
+      //   top: 265px;
+      //   font-size: 52px;
+      //   line-height: 110px;
+      //   font-weight: 600;
+      //   text-align: center;
+      //   color: $color-blue;
+      //   transform: rotate(-10deg);
+      // }
+
+      // &:after {
+      //   content: "Препарат 3";
+      //   position: absolute;
+      //   border: 5px solid $color-yellow;
+      //   width: 360px;
+      //   height: 120px;
+      //   left: 90px;
+      //   top: 265px;
+      //   font-size: 52px;
+      //   line-height: 110px;
+      //   font-weight: 600;
+      //   text-align: center;
+      //   color: $color-yellow;
+      //   transform: rotate(-10deg);
+      // }
+
+      .card__image-wrapper {
+        border-radius: 40px 40px 0 0;
+        min-height: 350px;
+        overflow: hidden;
+
+        .card__gradient {
+          position: absolute;
+          border-radius: 40px 40px 0 0;
+          left: 0;
+          top: 0;
+          width: 540px;
+          height: 350px;
+          background: linear-gradient(63.53deg, $color-green 16.62%, $color-lilac 83.38%);
+          opacity: 0.2;
+        }
+      }
+
+      .card__heading {
+        padding: 15px 60px 0 60px;
+        font-size: 32px;
+        font-weight: 600;
+        color: $color-lilac-light;
+      }
+
+      .card__content {
+        padding: 10px 60px 0 60px;
+        font-size: 23px;
+        color: $color-grey;
+      }
+    }
+
+    .screen__button {
+      position: absolute;
+      border-radius: 100px;
+      width: 280px;
+      height: 90px;
+      top: 870px;
+      font-size: 28px;
+      font-weight: 600;
+      color: $color-white;
+
+      &.--purple {
+        left: 30px;
+        background: linear-gradient(266.19deg, $color-purple 0%, #CA57FD 100%);
+      }
+
+      &.--blue {
+        left: 350px;
+        background: linear-gradient(266.19deg, $color-blue 0%, #0CC4FA 100%);
+      }
+
+      &.--yellow {
+        left: 670px;
+        background: linear-gradient(90deg, $color-yellow 0.02%, rgba(195, 199, 11, 0.96) 99.97%, #CAC6AB 99.98%, #D3E9E1 99.99%);
+      }
+    }
+  }
+}
+
+.side-bar {
+
+  &__home:before,
+  &__retry:before {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 70px;
+  }
+
+  &__home:before {
+    left: 50px;
+    background: url("../public/img/btn_home-1.svg") no-repeat center transparent;
+  }
+
+  &__retry:before {
+    left: 158px;
+    background: url("../public/img/btn_retry.svg") no-repeat center transparent;
+  }
+
+  &__parameters {
+    position: absolute;
+    width: 390px;
+    height: 40px;
+    left: 40px;
+    top: 430px;
+    font-size: 36px;
+    font-weight: 600;
+    color: $color-white;
+  }
+
+  &__parameter {
+    position: absolute;
+    width: 190px;
+    height: 80px;
+    padding-left: 118px;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 80px;
+    vertical-align: middle;
+    background: $color-white;
+    color: $color-grey;
+    box-shadow: 0px 0px 50px rgba(131, 42, 64, 0.4);
+    border-radius: 40px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      left: 10px;
+      top: 10px;
+    }
+
+    &.--sad {
+      left: 40px;
+      top: 500px;
+
+      &:after {
+        background: url("../public/img/sad_icon.svg") no-repeat center transparent;
+      }
+    }
+
+    &.--happy {
+      left: 250px;
+      top: 500px;
+
+      &:after {
+        background: url("../public/img/happy_icon.svg") no-repeat center transparent;
+      }
+    }
+
+    &.--heart {
+      left: 149px;
+      top: 620px;
+
+      &:after {
+        background: url("../public/img/heart_icon.svg") no-repeat center transparent;
+      }
+    }
+  }
+
+  &__counter {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 470px;
+    height: 134px;
+    left: 0px;
+    top: 890px;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    background: rgba(255, 255, 255, 0.15);
+    color: $color-white;
+
+    &__left {
+      font-size: 44px;
+    }
+  }
+}
+
+.final {
+  position: relative;
+  height: 100%;
+  background: url("../public/img/final.png") no-repeat right top transparent;
+
+  &__home {
+    border-radius: 50%;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 50px;
+    top: 70px;
+    background: linear-gradient(63.53deg, $color-green 16.62%, $color-lilac 83.38%);
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      left: 0;
+      top: -1px;
+      background: url("../public/img/btn_home-2.svg") no-repeat center transparent;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    width: 710px;
+    height: 760px;
+    top: 0;
+    right: 0;
+  }
+
+  &__result {
+    position: absolute;
+    left: 130px;
+    top: 460px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      width: 580px;
+      height: 1px;
+      background-color: #D9D9D9;
+    }
+  }
+
+  &__restart {
+    position: absolute;
+    border-radius: 100px;
+    width: 270px;
+    height: 60px;
+    left: 130px;
+    top: 880px;
+    font-size: 24px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #D9D9D9 0%, #A1A1A1 100%);
+    color: $color-white;
+  }
+}
+
+.result {
+  &__your-result {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: $color-lilac-light;
+  }
+
+  &__result {
+    font-size: 42px;
+    font-weight: 800;
+    color: $color-lilac-light;
+  }
+
+  &__content {
+    width: 580px;
+    font-size: 24px;
+    color: $color-grey;
+  }
+}
+
+.counter {
+  &__percents {
+    position: absolute;
+    width: 180px;
+    height: 70px;
+    left: 130px;
+    top: 260px;
+    font-size: 48px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 70px;
+    color: $color-grey;
+
+    &.--drug-1 {
+      left: 130px;
+    }
+
+    &.--drug-2 {
+      left: 330px;
+    }
+
+    &.--drug-3 {
+      left: 530px;
+    }
+  }
+
+  &__drug {
+    position: absolute;
+    width: 180px;
+    height: 40px;
+    top: 330px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    color: $color-grey;
+
+    &.--one {
+      left: 130px;
+    }
+
+    &.--two {
+      left: 330px;
+    }
+
+    &.--three {
+      left: 530px;
+    }
+  }
+}
+
+/* Transitions */
+.fade-enter-to,
+.fade-leave {
+  transition: opacity 1s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
